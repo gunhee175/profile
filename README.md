@@ -1,204 +1,54 @@
-# Hugo Theme: Console
+# gunhee175 / profile
 
-A minimal and responsive Hugo theme inspired by the system console, crafted for optimal performance with an average page load time of under one second.
+장건희(Jang Gun Hee)의 개인 소개 사이트입니다. Hugo와 Console 테마로 만들고 GitHub Pages로 배포합니다.
 
-The theme is based on a modern and minimal [Terminal CSS](https://terminalcss.xyz/) framework.
+- 공개 사이트: https://gunhee175.github.io/profile/
+- 테마 원본 README: `site/themes/template/README.md`
 
-## Features
+## 1. 필요 도구와 버전
 
-- **Fast Performance**: Optimized for speed with sub-second load times
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Console-Inspired**: Clean, terminal-like aesthetic with modern typography
-- **Photo Gallery Support**: Built-in gallery functionality for photo collections
-- **Blog Ready**: Full support for blog posts with metadata
-- **Easy Customization**: Simple configuration and extensible design
-- **Hugo v0.146.0+ Compatible**: Updated for the latest Hugo template system 
+| 도구 | 버전 | 비고 |
+|------|------|------|
+| Hugo (Extended) | 0.167.0 | 워크플로 `HUGO_VERSION`과 동일하게 맞춤 |
+| Git | 최신 | |
+| Python | 3.9 이상 | 배포 워크플로는 3.12 사용 |
 
-![Console](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/images/preview.png?raw=true)
+설치: https://gohugo.io/installation/ 에서 OS에 맞는 Hugo Extended 0.167.0을 설치한 뒤 `hugo version`으로 확인합니다.
 
-## Live demo
-
-* [https://mrmierzejewski.com/hugo-theme-console/](https://mrmierzejewski.com/hugo-theme-console/)
-
-## Installation
-
-### Adding theme as a Git submodule
-
-From the root of your Hugo site, clone the theme into `themes/hugo-theme-console` by running:
+## 2. 로컬에서 실행하기
 
 ```bash
-$ git submodule add https://github.com/mrmierzejewski/hugo-theme-console.git themes/hugo-theme-console
-```
-    
-See the [Hugo documentation](https://gohugo.io/hugo-modules/theme-components/) for more information.
-
-### Adding theme as a Hugo module
-
-From the root of your Hugo site, turn your site into a Hugo module by running:
-
-```bash
-$ hugo mod init github.com/my-username/my-new-site
-
+git clone https://github.com/gunhee175/profile.git
+cd profile/site
+hugo server
 ```
 
-Next, declare the `Console` theme module as a dependency for your site.
+브라우저에서 터미널에 표시된 주소(예: `http://localhost:1313/profile/`)를 엽니다. 배포용 결과물만 만들려면 `site` 폴더에서 `hugo --minify`를 실행하면 `site/public/`에 생성됩니다. (`public/`은 `.gitignore`로 제외됩니다.)
 
-```bash
-$ hugo mod get github.com/mrmierzejewski/hugo-theme-console
-```
+## 3. 내용 수정 위치
 
-Finally, add this section to your config file `hugo.toml`:
+| 수정할 내용 | 파일 |
+|------------|------|
+| 사이트 주소·제목·언어·메뉴 | `site/hugo.toml` |
+| 소개·경력·활동·프로젝트·관심 분야 글 | `site/content/<메뉴명>/index.md` |
+| 홈 화면(프로필 카드) | `site/themes/template/layouts/index.html` |
+| 추가 스타일 | `site/assets/css/custom.css` |
+| 프로필 이미지 | `site/static/images/profile.jpg` |
 
-```toml
-[[module.imports]]
-  path = "github.com/mrmierzejewski/hugo-theme-console"
-```
+## 4. 재배포와 확인
 
-## Configuration
+1. 수정 후 `git add` → `git commit -m "변경 내용"` → `git push origin main`
+2. 저장소 **Actions** 탭(https://github.com/gunhee175/profile/actions)에서 `Deploy Hugo to GitHub Pages` 실행이 push로 시작되어 build·deploy 모두 성공했는지 확인
+3. https://gunhee175.github.io/profile/ 를 새로고침(캐시 없이: Ctrl+Shift+R)해 변경 반영 확인
 
-Set theme parameter in your config file:
+배포 설정: Settings → Pages → Source = GitHub Actions, 워크플로 파일 `.github/workflows/hugo-pages.yml`
 
-```toml
-theme = "hugo-theme-console"
-```
+## 5. 출처와 라이선스
 
-### Basic Configuration
-
-Add these parameters to your `hugo.toml` file for basic customization:
-
-```toml
-[params]
-  description = "Your site description"
-  animateStyle = "animate-fade-up" # Animation style for content
-
-[[params.navlinks]]
-  name = "About"
-  url = "/about/"
-
-[[params.navlinks]]
-  name = "Posts"
-  url = "/posts/"
-
-[[params.navlinks]]
-  name = "Photos"
-  url = "/photos/"
-```
-
-### Custom styles
-
-On your main directory add `assets/css/custom.css`. Now you can overwrite default styles, i.e:
-
-```css
-
-:root {
-    --global-font-size: 16px;
-    --global-font-color: #444;
-    --mono-font-stack: Roboto Mono, Menlo, Monaco, Lucida Console,
-        Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-        Courier New, monospace, serif;
-    --font-stack: Roboto Mono, Menlo, Monaco, Lucida Console, Liberation Mono,
-        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-        serif;
-    --global-line-height: 1.6em;
-    --page-width: 70em;
-    --display-h1-decoration: 1;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-	--background-color: #222225;
-	--page-width: 60em;
-	--font-color: #e8e9ed;
-	--invert-font-color: #222225;
-	--secondary-color: #a3abba;
-	--tertiary-color: #a3abba;
-	--primary-color: #62c4ff;
-	--error-color: #ff3c74;
-	--progress-bar-background: #3f3f44;
-	--progress-bar-fill: #62c4ff;
-	--code-bg-color: #3f3f44;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-	--background-color:#fff;
-	--font-color:#151515;
-	--invert-font-color:#fff;
-	--primary-color:#1a95e0;
-	--secondary-color:#727578;
-	--error-color:#d20962;
-	--progress-bar-background:#727578;
-	--progress-bar-fill:#151515;
-	--code-bg-color:#e8eff2;
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    :root {
-        --global-font-size: 14px;
-        --global-font-color: #444;
-        --global-line-height: 1.6em;
-        --page-width: 70em;
-    }
-}
-```
-
-## Quick Start
-
-After installation, take a look in the `exampleSite` folder. This directory contains an example config file and the content for the demo.
-
-```
-exampleSite
-├── hugo.toml
-├── content
-│   ├── about
-│   │   └── index.md
-│   ├── photos
-│   │   └── arizona-us
-│   │       ├── arizona-us.jpg
-│   │       └── index.md
-│   └── posts
-│       └── introduction
-│           └── index.md
-├── layouts
-└── static
-```
-
-Copy at least the `hugo.toml` in the root directory of your website. Overwrite the existing config file if necessary.
-
-### Development Server
-
-Hugo includes a development server, so you can view your changes as you go—very handy. Spin it up with the following command:
-
-```bash
-hugo serve
-```
-
-Now you can go to [http://localhost:1313](http://localhost:1313), and the theme should be visible.
-
-### Building for Production
-
-To build your site for production:
-
-```bash
-hugo --minify
-```
-
-This will create a `public/` directory with your optimized site ready for deployment.
-
-## Example Site
-
-To run the example site, please type the following command.
-
-```
-make hugo-server
-```
-
-## Template System Upgrade
-
-This theme has been updated to be compatible with Hugo v0.146.0 and the new template system. For detailed information about the changes made, please see [TEMPLATE_UPGRADE.md](TEMPLATE_UPGRADE.md).
-
-## License
-
-Copyright &copy; 2026 [Marcin Mierzejewski](https://mrmierzejewski.com/). This theme is released under the [MIT License](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md).
+| 자료 | 구분 | 출처 | 조건 |
+|------|------|------|------|
+| Console 테마 (`site/themes/template/`) | 외부 | https://github.com/mrmierzejewski/hugo-theme-console | MIT, `LICENSE` 유지 |
+| Terminal CSS 0.7.4, animate.css 4.1.1 | 외부 (테마 포함) | https://terminalcss.xyz/, https://animate.style/ | MIT |
+| Nanum Gothic Coding 웹폰트 | 외부 | Google Fonts | SIL OFL |
+| 콘텐츠 글, `custom.css`, 프로필 사진 | 직접 제작 | — | 본인 저작물 |
+| 프로필 이미지 경로 수정 (`index.html`) | AI 보조 (Claude) | 커밋 2f10c62 | — |
