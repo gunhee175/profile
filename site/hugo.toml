@@ -1,24 +1,28 @@
-baseurl = "https://example.com/"
-title = "console-demo"
-
-languageCode = "en-us"
+baseurl = "https://gunhee175.github.io/profile/"
+title = "gunhee175"
+languageCode = "ko"
 
 [params]
-  # Cutting off the page title to two chars for mobile (console-demo -> co)
   titleCutting = true
-
-  # Set the animation style -- https://animate.style/
-  # To disable animations, please remove or comment animationStyle parameter
-  animateStyle = "animated zoomIn fast" 
+  description = "Jang Gun Hee | Cybersecurity Researcher & Student at JBNU"
+  animateStyle = "animated fadeIn fast"
 
   [[params.navlinks]]
   name = "about/"
   url = "about/"
 
   [[params.navlinks]]
-  name = "posts/"
-  url = "posts/"
-  
+  name = "experience/"
+  url = "experience/"
+
   [[params.navlinks]]
-  name = "photos/"
-  url = "photos/"
+  name = "activities/"
+  url = "activities/"
+
+  [[params.navlinks]]
+  name = "projects/"
+  url = "projects/"
+
+  [[params.navlinks]]
+  name = "interests/"
+  url = "interests/"

@@ -1,79 +1,43 @@
 +++
-date = "2016-11-05T21:05:33+05:30"
+date = "2026-11-07"
 title = "About"
+description = "장건희(Jang Gun Hee)의 소개 페이지 - 사이버보안 연구자"
 +++
 
-A minimal and responsive Hugo theme inspired by the system console, crafted for optimal performance with an average page load time of under one second.
-
-Theme is based on a modern and minimal [Terminal CSS](https://terminalcss.xyz/) framework. 
-
-![Console](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/images/preview.png?raw=true)
-
-## Live demo
-
-* [https://mrmierzejewski.com/hugo-theme-console/](https://mrmierzejewski.com/hugo-theme-console/)
-
-## Installation
-
-From the root of your Hugo site, clone the theme into ```themes/hugo-theme-console``` by running :
+## whoami
 
 ```
-$ git submodule add https://github.com/mrmierzejewski/hugo-theme-console.git hugo-theme-console
-```
-    
-See the [Hugo documentation](https://gohugo.io/hugo-modules/theme-components/) for more information.
-
-## Configuration
-
-Set theme parameter in your config file:
-
-```
-theme = "hugo-theme-console"
+이름    : 장건희 (Jang Gun Hee)
+소속    : 전북대학교 (Jeonbuk National University)
+신분    : 학부생 · BCG 연구실 학부연구생
+분야    : 정보보안 / 사이버보안 연구
+이메일  : gunhee175@gmail.com
+GitHub  : https://github.com/gunhee175/
 ```
 
-## Quick start
+---
 
-After installation, take a look in the `exampleSite` folder at. This directory contains an example config file and the content for the demo.
+## 기술 스택 (Skills)
 
-```
-  exampleSite
-  ├── hugo.toml
-  ├── content
-  │   ├── about
-  │   │   └── index.md
-  │   └── photos
-  │   │   └── arizona-us
-  │   │       ├── arizona-us.jpg
-  │   │       └── index.md
-  │   └── posts
-  │       └── introduction
-  │           └── index.md
-  ├── layouts
-  │
-  └── static
-```
+### 프로그래밍 언어
 
-Copy at least the `hugo.toml` in the root directory of your website. Overwrite the existing config file if necessary.
+| 언어 | 숙련도 |
+|------|--------|
+| C    | ████████░░ |
+| Python | ███████░░░ |
+| C++  | ██████░░░░ |
 
-Hugo includes a development server, so you can view your changes as you go -
-very handy. Spin it up with the following command:
+### 도구 & 환경
 
-```
-hugo serve
-```
+- **보안 분석**: 취약점 분석, 악성코드 분석, 무선 전파 분석
+- **무선 통신**: WiFi-Sensing, CSI(Channel State Information), BFI(Beamforming Feedback Information)
+- **운영체제**: Linux, macOS, Windows
+- **버전 관리**: Git / GitHub
 
-Now you can go to [http://localhost:1313](http://localhost:1313) and the theme should be visible.
+---
 
-## Example Site
+## 연락처 (Contact)
 
-To run the example site, please type the following command.
-
-```
-make hugo-server
-```
-
-## License
-
-Copyright © 2024 [Marcin Mierzejewski](https://mrmierzejewski.com/)
-
-The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.
+- 📧 Email: [gunhee175@gmail.com](mailto:gunhee175@gmail.com)
+- 🐙 GitHub: [github.com/gunhee175](https://github.com/gunhee175/)
+- 📸 Instagram: [@gyunhee.e](https://www.instagram.com/gyunhee.e/)

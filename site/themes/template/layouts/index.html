@@ -1,42 +1,46 @@
 {{ define "main" }}
 
-<h1>About</h1>
-
-<p>
-Console is a minimal, responsive and light theme for Hugo inspired by Linux console.  <a href="about/">(more)</a>
-</p>
-<br/>
-
-<h1>Latest posts</h1>
-
-<div class="posts-list">
-{{ with .Site.GetPage "/posts" }}
-    {{ range first 3 (sort .Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
-        <div class="post">
-            <p>
-                <div class="date">{{ .Date | time.Format ":date_medium" }}</div>
-                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-                {{ .Summary }}
-            </p>
-        </div>    
-    {{ end }}
-{{ end }}
+<section aria-label="프로필 소개">
+<div class="profile-section">
+  <div class="profile-image-wrap">
+    <img src="https://scontent-icn2-1.cdninstagram.com/v/t51.82787-19/883815122_18419919682158992_2326137056676402400_n.jpg?_nc_cat=106&ig_cache_key=GNLyrTSQQXLB0XBBAODUESJUGUggbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=zTcxUa2Zfn8Q7kNvwG_5xsN&_nc_oc=AdoAVn9M55j6zHariT2qu7Wv3692ULCvYBAIZeOp0T_aMCo5YOgS8nHN7-IBlX_ao4c&_nc_zt=24&_nc_ht=scontent-icn2-1.cdninstagram.com&_nc_gid=XakPoQ_3fqGQQZwtTH7Ewg&_nc_ss=7b6a8&oh=00_AQRuQz-6iDmiKYACvzOh5-Hc-V0Xsbk-dxUDh-xlVY6RUA&oe=6AF4DBE4"
+         alt="장건희 프로필 사진"
+         class="profile-img"
+         width="150" height="150">
+  </div>
+  <div class="profile-info">
+    <h1>Jang Gun Hee <span class="profile-cursor">_</span></h1>
+    <p class="profile-role">사이버보안 연구자 · 전북대학교 학부연구생</p>
+    <p class="profile-desc">
+      BCG 연구실 소속 학부연구생으로 XZ 취약점 분석, WiFi-Sensing 및 무선 전파(CSI/BFI) 분석을 연구합니다.
+      전북대 보안동아리 RAMS 운영진으로 활동 중입니다.
+    </p>
+    <nav class="profile-links" aria-label="외부 링크">
+      <a href="https://github.com/gunhee175/" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필">
+        [GitHub]
+      </a>
+      <a href="https://www.instagram.com/gyunhee.e/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램 프로필">
+        [Instagram]
+      </a>
+      <a href="mailto:gunhee175@gmail.com" aria-label="이메일 보내기">
+        [Email]
+      </a>
+    </nav>
+  </div>
 </div>
+</section>
 
-<h1>Latest photos</h1>
+<hr/>
 
-<div class="image-grid">
-{{ with .Site.GetPage "/photos" }}
-    {{ range first 3 (sort .Pages "Date" "desc")}}
-        <a href="{{ .Permalink }}" title="{{ .Title }}">
-        {{ $image := .Page.Resources.GetMatch .Params.image }}
-        {{ with $image }}
-            {{ $thumb := .Resize "400x" }}
-            <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
-        {{end}}
-        </a>
-    {{ end }}
-{{ end }}
+<section aria-label="빠른 메뉴">
+<h2>$ ls -la</h2>
+<div class="quick-nav">
+  <div class="qn-item"><a href="{{ absURL "about/" }}">📄 about/</a>       — 소개 및 기술 스택</div>
+  <div class="qn-item"><a href="{{ absURL "experience/" }}">💼 experience/</a>  — 연구 경력</div>
+  <div class="qn-item"><a href="{{ absURL "activities/" }}">🏫 activities/</a>  — 동아리 · 대외활동</div>
+  <div class="qn-item"><a href="{{ absURL "projects/" }}">🔬 projects/</a>    — 프로젝트 · 자격증</div>
+  <div class="qn-item"><a href="{{ absURL "interests/" }}">⭐ interests/</a>   — 관심 분야</div>
 </div>
+</section>
 
 {{ end }}

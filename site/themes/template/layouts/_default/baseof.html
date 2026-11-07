@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="author" content="Jang Gun Hee">
     <link rel="stylesheet" href="{{ "hugo-theme-console/css/terminal-0.7.4.min.css" | absURL }}">
     <link rel="stylesheet" href="{{ "hugo-theme-console/css/animate-4.1.1.min.css" | absURL }}">
     <link rel="stylesheet" href="{{ "hugo-theme-console/css/console.css" | absURL }}">
@@ -34,14 +35,14 @@
 </head>
 <body class="terminal">
     <div class="container">
-        <div class="terminal-nav">
+        <div class="terminal-nav" role="banner">
           <header class="terminal-logo">
             <div class="logo terminal-prompt">
               {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
               {{ $.Scratch.Add "path" .Site.BaseURL }}
-              <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>:~# 
+              <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}" aria-label="홈으로 이동">{{ .Site.Title }}</a>:~# 
               {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
-          <nav class="terminal-menu">
+          <nav class="terminal-menu" aria-label="주요 메뉴">
             <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 {{ range $index, $element := .Site.Params.navlinks }}
                 <li property="itemListElement" typeof="ListItem">
@@ -55,10 +56,10 @@
         </div>
     </div>
 
-    <div class="container {{ .Site.Params.animateStyle }}" >
+    <main class="container {{ .Site.Params.animateStyle }}" role="main" id="main-content">
         {{ block "main" . }}
         {{ end }}
         {{ partial "footer.html" . }}
-    </div>
+    </main>
   </body>
 </html>
