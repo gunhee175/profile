@@ -1,6 +1,8 @@
 .DS_Store
 public
 *.lock
+.github
+.report
 
 # Prepared Hugo Pages site
 !/site/
