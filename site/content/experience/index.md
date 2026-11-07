@@ -13,7 +13,7 @@ description = "장건희의 연구 경력 - BCG 연구실 학부연구생"
 **전북대학교 (Jeonbuk National University)**  
 *현재 진행 중*
 
-전북대학교 BCG(Broadband Communication Group) 연구실 소속 학부연구생으로 무선 통신 보안 및 취약점 분석 연구에 참여하고 있습니다.
+전북대학교 BCG 연구실(지도교수 홍득조) 소속 학부연구생으로 무선 통신 보안 및 취약점 분석 연구에 참여하고 있습니다.
 
 ---
 
@@ -59,3 +59,4 @@ description = "장건희의 연구 경력 - BCG 연구실 학부연구생"
 | 무선 통신 | CSI, BFI, WiFi-Sensing |
 | 프로그래밍 | C, Python, C++ |
 | 보안 연구 | 악성코드 분석, 공급망 공격 |
+

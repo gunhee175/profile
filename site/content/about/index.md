@@ -9,7 +9,7 @@ description = "장건희(Jang Gun Hee)의 소개 페이지 - 사이버보안 연
 ```
 이름    : 장건희 (Jang Gun Hee)
 소속    : 전북대학교 (Jeonbuk National University)
-신분    : 학부생 · BCG 연구실 학부연구생
+신분    : 학부생 · BCG 연구실(지도교수 홍득조 교수) 학부연구생
 분야    : 정보보안 / 사이버보안 연구
 이메일  : gunhee175@gmail.com
 GitHub  : https://github.com/gunhee175/

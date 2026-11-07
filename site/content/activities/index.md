@@ -13,13 +13,13 @@ description = "장건희의 대외활동 - 전북대 보안동아리 RAMS 운영
 **Jeonbuk National University Security Club**  
 **역할**: 운영진 (현재 진행 중)
 
-전북대학교 정보보안 동아리 **RAMS(람스)**의 운영진으로 활동하고 있습니다.
+전북대학교 정보보안 동아리 **RAMS(램스)**의 운영진으로 활동하고 있습니다.
 
 ```
-동아리명  : RAMS (람스)
+동아리명  : RAMS (램스)
 소속      : 전북대학교 (JBNU)
 역할      : 운영진
-활동 분야 : 정보보안, CTF(Capture The Flag), 보안 스터디
+활동 분야 : 정보보안, CTF(Capture The Flag), 보안 스터디 리더
 상태      : 현재 활동 중
 ```
 
@@ -47,3 +47,4 @@ description = "장건희의 대외활동 - 전북대 보안동아리 RAMS 운영
         │
 2026 ───┴── CSI/BFI 전파 분석 (현재 진행 중)
 ```
+
